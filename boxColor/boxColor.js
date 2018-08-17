@@ -19,7 +19,6 @@ function makeBoxes(n){
     myElement.className ='box';
     myElement.style = 'background-color:' + colors[currColor];
     myNode.appendChild(myElement);
-
     if (currColor === colors.length-1){
       currColor=0;
     } else {
@@ -27,6 +26,9 @@ function makeBoxes(n){
     }
   }
 
+ myNode.addEventListener('click',(e) => {
+  e.target.parentNode.removeChild(e.target);
+ },false)
 }
 
 makeBoxes(10);
